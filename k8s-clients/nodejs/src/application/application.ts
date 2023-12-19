@@ -19,7 +19,7 @@ export class Application {
   }
 
   start(port?: number) {
-    port = (port && port > 0) ? port : Config.listen.port
+    port = (port && port > 0) ? port : Config.server.port
     logger.info('going to listen on:' + port + '!');
     
     Server.instance.listen(port, `aws proxy going is listening on port: ${port} + '!'`)

@@ -1,4 +1,4 @@
-import { DynamicModule, INestApplicationContext, Type } from '@nestjs/common';
+import { DynamicModule, INestApplicationContext, Type } from '@nestjs/common'
 import { Config } from '../config'
 
 export class Nest {

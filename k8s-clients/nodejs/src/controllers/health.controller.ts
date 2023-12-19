@@ -2,7 +2,7 @@ import express from 'express';
 import { Server } from '../application/server';
 import { Controller } from '../types'
 import Logger from '../common/logger';
-const logger = Logger.get('uplaod-route')
+const logger = Logger.get('health')
 
 class UploadController implements Controller {
 
@@ -13,7 +13,7 @@ class UploadController implements Controller {
   public add(): express.Router {
     let router = express.Router();
                     
-    router.get(['/health'], async (req: express.Request, res: express.Request) => {      
+    router.get(['/health'], async (req: express.Request, res: express.Response) => {      
       res.json({ status: 'ok'})
     })    
 

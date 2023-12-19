@@ -6,9 +6,35 @@
   "scripts": {
     "start": "node dist/src/index.js",
     "compile": "npx tsc --sourcemap --declaration",
+    "watch": "npx tsc --sourcemap --declaration -w",
     "test": "mocha --exit --colors ./dist/tests/**/*.js --timeout 10000000"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.3.11",
+    "@types/express": "^4.17.21",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.10.5",
+    "@types/source-map-support": "^0.5.10",
+    "@types/supertest": "^2.0.16",
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "supertest": "^6.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.3.0",
+    "@nestjs/core": "^10.3.0",
+    "body-parser": "^1.20.2",
+    "correlation-id": "^5.0.3",
+    "express": "^4.18.2",
+    "log4js": "^6.9.1",
+    "nestjs": "^0.0.1",
+    "reflect-metadata": "^0.1.14",
+    "rxjs": "^7.8.1",
+    "source-map-support": "^0.5.21"
+  }
 }
