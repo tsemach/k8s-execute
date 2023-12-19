@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/src/index.js",
+    "compile": "npx tsc --sourcemap --declaration",
+    "test": "mocha --exit --colors ./dist/tests/**/*.js --timeout 10000000"
   },
   "keywords": [],
   "author": "",
