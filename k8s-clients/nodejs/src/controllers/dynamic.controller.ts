@@ -18,10 +18,12 @@ export class DynamicController implements Controller {
   public add(app: express.Application, opaque: EndpointType): express.Router {
     let router = express.Router();
                     
-    router.get(opaque.paths, async (req: express.Request, res: express.Response) => {
+    // router.get(opaque.paths, async (req: express.Request, res: express.Response) => {
+    //   res.json({ method: 'get'})
+    // })    
+    router[opaque.method.toString()](opaque.paths, async (req: express.Request, res: express.Response) => {
       res.json({ method: 'get'})
     })    
-
     return router;    
   }
 
