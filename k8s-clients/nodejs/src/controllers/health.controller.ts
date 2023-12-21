@@ -4,7 +4,7 @@ import { Controller } from '../types'
 import Logger from '../common/logger';
 const logger = Logger.get('health')
 
-class UploadController implements Controller {
+class HealthController implements Controller {
 
   constructor() {    
     Server.instance.route('/', this);
@@ -22,6 +22,6 @@ class UploadController implements Controller {
 
 }
 
-export default new UploadController();
+export default new HealthController();
 
 

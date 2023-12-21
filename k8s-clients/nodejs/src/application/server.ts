@@ -47,9 +47,9 @@ export class Server {
    * @param where - thed of which the service is route (regular express path)
    * @param service - a class which implement this route using the add method
    */
-  route(where: string, service: Controller) {
+  route(where: string, service: Controller, opaque?: any) {
     logger.info("going to add service at: " + where);
-    this.app.use(where, service.add(this.app));
+    this.app.use(where, service.add(this.app, opaque));
   }
 
   listen(port: number, message = '') {
