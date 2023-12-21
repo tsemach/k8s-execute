@@ -18,7 +18,12 @@ describe('Test Dynamic Controller API', function() {
   })
   
   it('dynamic-controller.test.ts: test call to new api create by dynamic controller', async () => {        
-    new DynamicController()
+    const dc = new DynamicController()
+    dc.create({
+      method: HttpMethod.GET,
+      paths: ['/get'],
+      callback: null
+    })
     // const dc = new DynamicController().create({
     //   method: HttpMethod.GET,
     //   paths: ['get'],

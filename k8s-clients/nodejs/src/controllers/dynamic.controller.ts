@@ -1,19 +1,24 @@
 import express from 'express';
 import { Server } from '../application/server';
-import { Controller } from '../types'
+import { Controller, EndpointType } from '../types'
 import Logger from '../common/logger';
 const logger = Logger.get('health')
 
 export class DynamicController implements Controller {
 
   constructor() {    
-    Server.instance.route('/', this);
+    // Server.instance.route('/', this);
   }
 
-  public add(): express.Router {
+  create(endpoint: EndpointType) {
+    Server.instance.route('/', this, endpoint);
+    return this
+  }
+
+  public add(app: express.Application, opaque: EndpointType): express.Router {
     let router = express.Router();
                     
-    router.get(['/get'], async (req: express.Request, res: express.Response) => {      
+    router.get(opaque.paths, async (req: express.Request, res: express.Response) => {
       res.json({ method: 'get'})
     })    
 
