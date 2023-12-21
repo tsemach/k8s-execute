@@ -22,6 +22,7 @@ export class DynamicController implements Controller {
     //   res.json({ method: 'get'})
     // })    
     router[opaque.method.toString()](opaque.paths, async (req: express.Request, res: express.Response) => {
+      await opaque.callback(req, res)
       res.json({ method: 'get'})
     })    
     return router;    
