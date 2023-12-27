@@ -1,0 +1,9 @@
+apiVersion: tsemach.org.my.domain/v1
+kind: PdfDocument
+metadata:
+  name: my-document
+spec:
+  documentName: my-text
+  text: |
+    ### My Document
+    Hello **World**!

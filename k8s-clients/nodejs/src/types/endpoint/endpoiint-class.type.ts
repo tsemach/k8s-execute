@@ -1,0 +1,1 @@
+export type constructorFN<T> = new () => T
