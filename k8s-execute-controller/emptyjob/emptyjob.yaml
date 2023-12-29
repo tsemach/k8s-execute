@@ -1,0 +1,8 @@
+apiVersion: tsemach.org.my.domain/v1
+# apiVersion: tsemach.org/v1
+kind: EmptyJob
+metadata:
+  name: my-emptyjob
+spec:
+  jobName: somejob
+  

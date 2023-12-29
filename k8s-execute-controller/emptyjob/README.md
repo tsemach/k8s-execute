@@ -4,7 +4,7 @@
 
 ### Create PDF Resource
 ````bash
-kubectl apply -f pdfdocument.yaml # will return error
+kubectl apply -f emptyjob.yaml # will return error
 ````
 
 ### Create the pdf custom resource defintion
@@ -12,9 +12,9 @@ kubectl apply -f pdfdocument.yaml # will return error
 kubectl apply -f emptyjob-crd.yaml
 ````
 
-### Listing all pdfdocument resources
+### Listing all emptyjob resources
 ````bash
-kubectl get pdfdocument
+kubectl get emptyjob
 kubectl api-resources | grep pdf
 ````
 
@@ -22,18 +22,18 @@ kubectl api-resources | grep pdf
 ````bash
 kc proxy --port=8080 # on different terminal
 curl localhost:8080/apis  | grep tsemach
-curl localhost:8080/apis/tsemach.org/v1/namespaces/default/pdfdocuments
+curl localhost:8080/apis/tsemach.org/v1/namespaces/default/emptyjobs
 ````
 
 ### Creating the resource itself
 ````bash
-kubectl apply -f pdfdocument.yaml
+kubectl apply -f emptyjob.yaml
 ````
 
 ### To list the new resource created
 ````bash
-kubectl get pdf
-curl localhost:8080/apis/tsemach.org/v1/namespaces/default/pdfdocuments
+kubectl get emptyjob
+curl localhost:8080/apis/tsemach.org/v1/namespaces/default/emptyjobs
 ````
 
 # Creating the Controller
@@ -43,14 +43,14 @@ go mod init tsemach.org/v2
 kubebuilder init
 go mod tidy
 make
-kubebuilder create api --group tsemach.org --version v1 --kind PdfDocument
+kubebuilder create api --group tsemach.org --version v1 --kind EmptyJob
 ````
 
 # Building the controller
 
 This will create the custom resource file at config/crd/bases directory
 ````bash
-apply -f config/crd/bases/tsemach.org.my.domain_pdfdocuments.yaml
+apply -f config/crd/bases/tsemach.org.my.domain_emptyjobs.yaml
 ``````
 
 # Running the contoller

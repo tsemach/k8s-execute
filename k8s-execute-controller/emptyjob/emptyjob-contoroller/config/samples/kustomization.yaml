@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- tsemach.org_v1_emptyjob.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

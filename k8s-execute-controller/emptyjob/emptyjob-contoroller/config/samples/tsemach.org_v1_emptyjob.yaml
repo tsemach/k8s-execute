@@ -1,0 +1,12 @@
+apiVersion: tsemach.org.my.domain/v1
+kind: EmptyJob
+metadata:
+  labels:
+    app.kubernetes.io/name: emptyjob
+    app.kubernetes.io/instance: emptyjob-sample
+    app.kubernetes.io/part-of: emptyjob-contoroller
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: emptyjob-contoroller
+  name: emptyjob-sample
+spec:
+  # TODO(user): Add fields here
